@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+
+  api_service:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    ports:
+      - 2717:27017
